@@ -1,0 +1,157 @@
+syntax = "proto2";
+
+package transit_realtime;
+
+option java_package = "com.google.transit.realtime";
+option java_outer_classname = "GtfsRealtime";
+option csharp_namespace = "TransitRealtime";
+
+import "google/protobuf/timestamp.proto";
+
+/**
+ * A feed message, which is a sequence of FeedEntity messages, each
+ * representing one piece of information, such as a vehicle position.
+ */
+message FeedMessage {
+  required FeedHeader header = 1;
+  repeated FeedEntity entity = 2;
+}
+
+message FeedHeader {
+  enum Incrementality {
+    FULL_DATASET = 0;
+    DIFFERENTIAL = 1;
+  }
+
+  required string gtfs_realtime_version = 1;
+  optional Incrementality incrementality = 2 [default = FULL_DATASET];
+  optional uint64 timestamp = 3;
+}
+
+message FeedEntity {
+  required string id = 1;
+  optional bool is_deleted = 2 [default = false];
+  optional TripUpdate trip_update = 3;
+  optional VehiclePosition vehicle = 4;
+  optional Alert alert = 5;
+}
+
+message TripUpdate {
+  message StopTimeEvent {
+    optional int32 delay = 1;
+    optional int64 time = 2;
+    optional int32 uncertainty = 3;
+  }
+
+  message StopTimeUpdate {
+    optional string stop_sequence = 1;
+    optional string stop_id = 2;
+    optional StopTimeEvent arrival = 3;
+    optional StopTimeEvent departure = 4;
+    optional string schedule_relationship = 5;
+  }
+
+  required TripDescriptor trip = 1;
+  optional VehicleDescriptor vehicle = 3;
+  repeated StopTimeUpdate stop_time_update = 2;
+  optional uint64 timestamp = 4;
+  optional uint64 delay = 5;
+}
+
+message VehiclePosition {
+  message Position {
+    optional float latitude = 1;
+    optional float longitude = 2;
+    optional float bearing = 3;
+    optional double odometer = 4;
+    optional float speed = 5;
+  }
+
+  required TripDescriptor trip = 1;
+  optional VehicleDescriptor vehicle = 2;
+  optional Position position = 3;
+  optional uint64 timestamp = 4;
+  optional uint32 congestion_level = 5;
+  optional uint32 occupancy_status = 6;
+  optional string stop_id = 7;
+  optional int32 current_status = 8;
+  optional uint32 current_stop_sequence = 9;
+}
+
+message Alert {
+  repeated TimeRange active_period = 1;
+  repeated EntitySelector informed_entity = 5;
+  optional Cause cause = 6 [default = UNKNOWN_CAUSE];
+  optional Effect effect = 7 [default = UNKNOWN_EFFECT];
+  optional string url = 8;
+  optional string header_text = 10;
+  optional string description_text = 11;
+}
+
+message TimeRange {
+  optional uint64 start = 1;
+  optional uint64 end = 2;
+}
+
+message Position {
+  optional float latitude = 1;
+  optional float longitude = 2;
+  optional float bearing = 3;
+  optional double odometer = 4;
+  optional float speed = 5;
+}
+
+message TripDescriptor {
+  optional string trip_id = 1;
+  optional string route_id = 5;
+  optional uint64 start_time = 2;
+  optional string start_date = 3;
+  optional ScheduleRelationship schedule_relationship = 4;
+}
+
+message VehicleDescriptor {
+  optional string id = 1;
+  optional string label = 2;
+  optional string license_plate = 3;
+}
+
+message EntitySelector {
+  optional string agency_id = 1;
+  optional string route_id = 2;
+  optional TripDescriptor trip = 3;
+  optional string stop_id = 4;
+}
+
+enum ScheduleRelationship {
+  SCHEDULED = 0;
+  ADDED = 1;
+  UNSCHEDULED = 2;
+  CANCELED = 3;
+}
+
+enum Cause {
+  UNKNOWN_CAUSE = 1;
+  OTHER_CAUSE = 2;
+  TECHNICAL_PROBLEM = 3;
+  STRIKE = 4;
+  DEMONSTRATION = 5;
+  ACCIDENT = 6;
+  HOLIDAY = 7;
+  WEATHER = 8;
+  MAINTENANCE = 9;
+  CONSTRUCTION = 10;
+  POLICE_ACTIVITY = 11;
+  MEDICAL_EMERGENCY = 12;
+}
+
+enum Effect {
+  NO_SERVICE = 1;
+  REDUCED_SERVICE = 2;
+  SIGNIFICANT_DELAYS = 3;
+  DETOUR = 4;
+  ADDITIONAL_SERVICE = 5;
+  MODIFIED_SERVICE = 6;
+  OTHER_EFFECT = 7;
+  UNKNOWN_EFFECT = 8;
+  STOP_MOVED = 9;
+}
