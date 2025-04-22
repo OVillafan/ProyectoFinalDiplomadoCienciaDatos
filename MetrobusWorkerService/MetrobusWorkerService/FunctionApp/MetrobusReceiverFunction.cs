@@ -27,7 +27,7 @@ namespace AzureFunctionMetrobus
 
             // Leer el string de conexión del Storage desde configuración
             string connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
-            // 👇 Aquí va
+            // Aquí va
             string containerName = "raw-metrobus";
 
             // Guardar en Blob
