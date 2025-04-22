@@ -1,18 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Functions">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <!-- Usamos .NET 6 -->
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <!-- Versión de funciones -->
     <OutputType>Exe</OutputType>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.24.0" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.14.1" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.3.0" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.10.0" />
-    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.41" />
+    <!-- Dependencias de Azure Functions en el modelo aislado -->
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.7.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.0.13" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
   </ItemGroup>
+
   <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -22,7 +25,5 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+
 </Project>
