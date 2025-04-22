@@ -23,7 +23,7 @@ public class Worker : BackgroundService
                     if (entity?.Vehicle != null)
                     {
                         var pos = entity.Vehicle.Position;
-                        _logger.LogInformation($"Vehículo CS {entity.Vehicle.CurrentStatus} CongLevel ({entity.Vehicle?.OccupancyPercentage}  ) {i++}");
+                        _logger.LogInformation($"Vehículo CS {entity.Vehicle.CurrentStatus} CongLevel ({entity.Vehicle?.CongestionLevel}  ) {i++}");
                        
                     }
                 }

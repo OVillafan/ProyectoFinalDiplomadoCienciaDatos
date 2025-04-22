@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\villa\\Documents\\ProyectoFinal__DCD\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj": {}
+    "C:\\Users\\villa\\Documents\\ProyectoFinalDiplomadoCienciaDatos\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\villa\\Documents\\ProyectoFinal__DCD\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj": {
+    "C:\\Users\\villa\\Documents\\ProyectoFinalDiplomadoCienciaDatos\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\villa\\Documents\\ProyectoFinal__DCD\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj",
+        "projectUniqueName": "C:\\Users\\villa\\Documents\\ProyectoFinalDiplomadoCienciaDatos\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj",
         "projectName": "MetrobusWorkerService",
-        "projectPath": "C:\\Users\\villa\\Documents\\ProyectoFinal__DCD\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj",
+        "projectPath": "C:\\Users\\villa\\Documents\\ProyectoFinalDiplomadoCienciaDatos\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService.csproj",
         "packagesPath": "C:\\Users\\villa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\villa\\Documents\\ProyectoFinal__DCD\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\obj\\",
+        "outputPath": "C:\\Users\\villa\\Documents\\ProyectoFinalDiplomadoCienciaDatos\\MetrobusWorkerService\\MetrobusWorkerService\\MetrobusWorkerService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,11 +59,11 @@
             },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[9.0.4, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
             }
           },
           "imports": [

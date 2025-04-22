@@ -8,6 +8,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddTransient<IMetrobusDataService,MetrobusDataService>();
 //builder.Services.AddScoped<FeedProcessor>();
 //builder.Services.AddScoped<DataStorageService>();
+string connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
 
 var host = builder.Build();
 host.Run();
