@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34004.107
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetrobusWorkerService", "MetrobusWorkerService\MetrobusWorkerService.csproj", "{474E3C5A-F146-407F-83C4-90779D72F295}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionApp", "FunctionApp\FunctionApp.csproj", "{332F2751-FB8C-45A2-96DF-1D481FD05676}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp", "FunctionApp\FunctionApp.csproj", "{993BF19C-C5B5-4475-A208-C7ABEFEF2E43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{474E3C5A-F146-407F-83C4-90779D72F295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{474E3C5A-F146-407F-83C4-90779D72F295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{474E3C5A-F146-407F-83C4-90779D72F295}.Release|Any CPU.Build.0 = Release|Any CPU
-		{332F2751-FB8C-45A2-96DF-1D481FD05676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{332F2751-FB8C-45A2-96DF-1D481FD05676}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{332F2751-FB8C-45A2-96DF-1D481FD05676}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{332F2751-FB8C-45A2-96DF-1D481FD05676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993BF19C-C5B5-4475-A208-C7ABEFEF2E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993BF19C-C5B5-4475-A208-C7ABEFEF2E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993BF19C-C5B5-4475-A208-C7ABEFEF2E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993BF19C-C5B5-4475-A208-C7ABEFEF2E43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
