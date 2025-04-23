@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MetrobusWorkerService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4fcfa44c770cef88f881a45c41a329a8fa6df76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b94b5cf8255a08ea45b0edabb29b5df90279f72")]
 [assembly: System.Reflection.AssemblyProductAttribute("MetrobusWorkerService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MetrobusWorkerService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

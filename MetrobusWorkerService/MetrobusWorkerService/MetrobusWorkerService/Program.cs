@@ -1,14 +1,13 @@
 //using MetrobusWorkerService;
 
+using MetrobusWorkerService.Services;
+
 var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddHostedService<Worker>();
-builder.Services.AddHostedService<Worker>();
 builder.Services.AddHttpClient();
-//builder.Services.AddScoped<DataFetcher>();
 builder.Services.AddTransient<IMetrobusDataService,MetrobusDataService>();
-//builder.Services.AddScoped<FeedProcessor>();
-//builder.Services.AddScoped<DataStorageService>();
-string connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
+builder.Services.AddTransient<IFunctionSenderService, FunctionSenderService>();
+//string? connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
 
 var host = builder.Build();
 host.Run();

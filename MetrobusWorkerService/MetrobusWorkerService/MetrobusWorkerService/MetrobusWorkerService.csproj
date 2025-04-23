@@ -23,6 +23,10 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.4" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FunctionApp\FunctionApp.csproj" />
+  </ItemGroup>
   
   <ItemGroup>
     <Protobuf Include="Protos\gtfs-realtime.proto" GrpcServices="None" />

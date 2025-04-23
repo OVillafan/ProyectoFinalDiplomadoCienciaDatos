@@ -5,9 +5,9 @@ using TransitRealtime;
 public class MetrobusDataService : IMetrobusDataService
 {
     private readonly HttpClient _httpClient;
-    private readonly string _authUrl;
-    private readonly string _user;
-    private readonly string _password;
+    private readonly string? _authUrl;
+    private readonly string? _user;
+    private readonly string? _password;
 
     public MetrobusDataService(HttpClient httpClient, IConfiguration config)
     {

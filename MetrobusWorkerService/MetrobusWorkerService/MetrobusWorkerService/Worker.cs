@@ -1,12 +1,16 @@
+using MetrobusWorkerService.Services;
+
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
     private readonly IMetrobusDataService _metrobusService;
+    private readonly IFunctionSenderService _functionSender;
 
-    public Worker(ILogger<Worker> logger, IMetrobusDataService metrobusService)
+    public Worker(ILogger<Worker> logger, IMetrobusDataService metrobusService, IFunctionSenderService functionSender)
     {
         _logger = logger;
         _metrobusService = metrobusService;
+        _functionSender = functionSender;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -14,22 +18,12 @@ public class Worker : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             var feed = await _metrobusService.GetFeedMessageAsync();
-
             if (feed != null)
             {
-                var i = 0;
-                foreach (var entity in feed.Entity)
-                {
-                    if (entity?.Vehicle != null)
-                    {
-                        var pos = entity.Vehicle.Position;
-                        _logger.LogInformation($"Vehículo CS {entity.Vehicle.CurrentStatus} CongLevel ({entity.Vehicle?.CongestionLevel}  ) {i++}");
-                       
-                    }
-                }
+                await _functionSender.SendToFunctionAsync(feed);
             }
 
-            await Task.Delay(30000, stoppingToken);
+            await Task.Delay(10000, stoppingToken);
         }
     }
 }
